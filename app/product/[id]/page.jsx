@@ -116,7 +116,7 @@ const Product = () => {
                         <button onClick={() => addToCart(productData._id)} className="w-full py-3.5 bg-gray-100 text-gray-800/80 hover:bg-gray-200 transition">
                             Add to Cart
                         </button>
-                        <button onClick={() => { addToCart(productData._id); router.push('/cart') }} className="w-full py-3.5 bg-orange-500 text-white hover:bg-orange-600 transition">
+                        <button onClick={() => { addToCart(productData._id); router.push('/cart') }} className="w-full py-3.5 bg-green-500 text-white hover:bg-orange-600 transition">
                             Buy now
                         </button>
                     </div>
@@ -124,8 +124,8 @@ const Product = () => {
             </div>
             <div className="flex flex-col items-center">
                 <div className="flex flex-col items-center mb-4 mt-16">
-                    <p className="text-3xl font-medium">Featured <span className="font-medium text-orange-600">Products</span></p>
-                    <div className="w-28 h-0.5 bg-orange-600 mt-2"></div>
+                    <p className="text-3xl font-medium">Featured <span className="font-medium text-green-500">Products</span></p>
+                    <div className="w-28 h-0.5 bg-green-500 mt-2"></div>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-6 pb-14 w-full">
                     {products.slice(0, 5).map((product, index) => <ProductCard key={index} product={product} />)}
