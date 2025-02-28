@@ -27,7 +27,10 @@ const FeaturedProduct = () => {
   return (
     <div className="mt-14">
       <div className="flex flex-col items-center">
-        <p className="text-3xl font-medium">Featured Products</p>
+      <p className="text-3xl font-medium">
+            Featured{" "}
+            <span className="font-medium text-green-500">Products</span>
+          </p>
         <div className="w-28 h-0.5 bg-green-500 mt-2"></div>
       </div>
 
