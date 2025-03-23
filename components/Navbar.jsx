@@ -24,7 +24,7 @@ const Navbar = () => {
       <h2 className="font-bold text-2xl">E<span>commerence</span></h2>
       <div className="flex items-center gap-4 lg:gap-8 max-md:hidden font-bold">
         <Link href="/" className="hover:text-gray-900 transition">
-          Home
+          Hom
         </Link>
         <Link href="/all-products" className="hover:text-gray-900 transition">
           Shop
