@@ -1,6 +1,6 @@
 import { Inngest } from "inngest";
 import connectDB from "./db";
-import { aw } from "framer-motion/dist/types.d-6pKw1mTI";
+// import { aw } from "framer-motion/dist/types.d-6pKw1mTI";
 
 // Create a client to send and receive events
 export const inngest = new Inngest({ id: "ecommerence-next" });
@@ -62,7 +62,7 @@ export const syncUserDeletion= inngest.createFunction(
     },
     async({event})=>{
         const {id} =event.data
-        
+
         await connectDB()
         await User.findByIdAndDelete(id)
     }
