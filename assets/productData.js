@@ -7,7 +7,7 @@ export const products = [
     description: "Noise-cancellation, 40-hour battery",
     rating: 4.5,
     price: "$299.99",
-    imgSrc: assets.apple_earphone_image,
+    imgSrc: assets.curt1,
   },
   {
     id: 2,

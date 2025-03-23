@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.12.8",
     "framer-motion": "^12.4.7",
     "lucide-react": "^0.476.0",
+    "mongoose": "^8.12.2",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
