@@ -7,7 +7,7 @@ if (!cached){
 
 async function connectDB(){
     if (cached.conn){
-        return cached.com
+        return cached.conn
     }
 
     if(!cached.promise){
@@ -19,7 +19,7 @@ async function connectDB(){
         })
     }
     cached.conn =await cached.promise
-    return  cached.com
+    return  cached.conn
 }
 
 export default connectDB
