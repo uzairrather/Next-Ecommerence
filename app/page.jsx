@@ -1,14 +1,14 @@
 'use client'
 import React from "react";
-import HeaderSlider from "@/components/HeaderSlider";
-import HomeProducts from "@/components/HomeProducts";
-import Banner from "@/components/Banner";
-import NewsLetter from "@/components/NewsLetter";
-import FeaturedProduct from "@/components/FeaturedProduct";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import BestSeller from "@/components/BestSeller";
-import Carousel from "@/components/Carousel";
+import HeaderSlider from "@/app/components/HeaderSlider";
+import HomeProducts from "@/app/components/HomeProducts";
+import Banner from "@/app/components/Banner";
+import NewsLetter from "@/app/components/NewsLetter";
+import FeaturedProduct from "@/app/components/FeaturedProduct";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
+import BestSeller from "@/app/components/BestSeller";
+import Carousel from "@/app/components/Carousel";
 
 const Home = () => {
   return (

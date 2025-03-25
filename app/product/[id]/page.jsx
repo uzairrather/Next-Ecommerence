@@ -1,12 +1,12 @@
 "use client"
 import { useEffect, useState } from "react";
 import { assets } from "@/assets/assets";
-import ProductCard from "@/components/ProductCard";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ProductCard from "@/app/components/ProductCard";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import Loading from "@/components/Loading";
+import Loading from "@/app/components/Loading";
 import { useAppContext } from "@/context/AppContext";
 import React from "react";
 
