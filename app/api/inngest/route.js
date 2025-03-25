@@ -5,8 +5,8 @@ import { inngest, syncUserCreation, syncUserUpdation,syncUserDeletion} from "@/c
 export const { GET, POST, PUT } = serve({
   client: inngest,
   functions: [
-    syncUserCreation,
-    syncUserUpdation,
+    // syncUserCreation,
+    // syncUserUpdation,
     syncUserDeletion
   ],
 });
