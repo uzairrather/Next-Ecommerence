@@ -1,5 +1,6 @@
 import { Inngest } from "inngest";
 import connectDB from "./db";
+import User from "@/models/User";
 // import { aw } from "framer-motion/dist/types.d-6pKw1mTI";
 
 // Create a client to send and receive events
@@ -35,7 +36,7 @@ export const syncUserUpdation = inngest.createFunction(
 
     },
     {
-        event:'clerk/user.created'
+        event:'clerk/user.updated'
     },
     async({event})=>{
         const {id, first_name, last_name,email_addresses,image_url}= event.data
@@ -54,7 +55,7 @@ export const syncUserUpdation = inngest.createFunction(
 
 export const syncUserDeletion= inngest.createFunction(
     {
-        id:'delete-user-from-clerk'
+        id:'delete-user-with-clerk'
 
     },
     {
