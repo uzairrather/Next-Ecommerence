@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",         // ✅ Required for path aliasing
     "paths": {
       "@/*": ["./*"]
     }
