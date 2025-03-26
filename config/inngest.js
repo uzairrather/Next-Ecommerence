@@ -1,6 +1,6 @@
 import { Inngest } from "inngest";
 import connectDB from "./db";
-import User from "@/models/User";
+import User from "../models/User";
 // import User from "../models/User";
 // import { aw } from "framer-motion/dist/types.d-6pKw1mTI";
 
