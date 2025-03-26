@@ -5,7 +5,7 @@ import User from "../models/User";
 // import { aw } from "framer-motion/dist/types.d-6pKw1mTI";
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "ecommerence-next" });
+export const inngest = new Inngest({ id: "ecommerence" });
 
 //inngest fuction to save the user data to the database
 
