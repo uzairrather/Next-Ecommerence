@@ -3,12 +3,12 @@ import connectDB from "./db";
 import User from "../models/User";
 
 // Create the Inngest client
-export const inngest = new Inngest({ id: "ecommerence-next" });
+export const inngest = new Inngest({ id: "ecommerence" });
 
 // 🔹 CREATE user
 export const syncUserCreation = inngest.createFunction(
   {
-    id: "ecommerence-next-create-user-from-clerk", // ✅ unique
+    id: "ecommerence-create-user-from-clerk", // ✅ unique
   },
   {
     event: "clerk/user.created",
@@ -29,7 +29,7 @@ export const syncUserCreation = inngest.createFunction(
 // 🔹 UPDATE user
 export const syncUserUpdation = inngest.createFunction(
   {
-    id: "ecommerence-next-update-user-from-clerk", // ✅ unique
+    id: "ecommerence-update-user-from-clerk", // ✅ unique
   },
   {
     event: "clerk/user.updated",
@@ -50,7 +50,7 @@ export const syncUserUpdation = inngest.createFunction(
 // 🔹 DELETE user
 export const syncUserDeletion = inngest.createFunction(
   {
-    id: "ecommerence-next-delete-user-from-clerk", // ✅ this one matches the error you had
+    id: "ecommerence-delete-user-from-clerk", // ✅ this one matches the error you had
   },
   {
     event: "clerk/user.deleted",
