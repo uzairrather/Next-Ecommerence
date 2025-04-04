@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.13.23",
     "@clerk/nextjs": "^6.12.8",
+    "axios": "^1.8.4",
+    "cloudinary": "^2.6.0",
     "framer-motion": "^12.4.7",
     "inngest": "^3.34.1",
     "lucide-react": "^0.476.0",

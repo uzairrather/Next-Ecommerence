@@ -1,8 +1,11 @@
 'use client'
-import { productsDummyData, userDummyData } from "../assets/assets";
-import { useUser } from "@clerk/nextjs";
+import axios from "axios";
+import { productsDummyData} from "../assets/assets";
+import { useAuth, useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
+
 
 export const AppContext = createContext();
 
@@ -15,18 +18,49 @@ export const AppContextProvider = (props) => {
     const currency = process.env.NEXT_PUBLIC_CURRENCY
     const router = useRouter()
     const {user}  =useUser()
+    //get intregated with frontend
+    const {getToken}= useAuth()
     const [products, setProducts] = useState([])
     const [userData, setUserData] = useState(false)
-    const [isSeller, setIsSeller] = useState(true)
+    const [isSeller, setIsSeller] = useState(false)
     const [cartItems, setCartItems] = useState({})
 
     const fetchProductData = async () => {
+
         setProducts(productsDummyData)
     }
 
-    const fetchUserData = async () => {
-        setUserData(userDummyData)
+   const fetchUserData = useCallback (async () => {
+    try {
+        // Early exit if no user or role check
+        if (!user) return;
+
+        if (user?.publicMetadata?.role === 'seller') {
+            setIsSeller(true);
+        }
+
+        const token = await getToken();
+        if (!token) {
+            toast.error("No authentication token found.");
+            return;
+        }
+
+        const { data } = await axios.get('/api/user/data', {
+            headers: { Authorization: `Bearer ${token}` },
+        });
+
+        if (data.success) {
+            setUserData(data.user);
+            setCartItems(data.user.cartItems || {}); // Fallback to empty object
+        } else {
+            toast.error(data.message || "Failed to fetch user data.");
+        }
+    } catch (error) {
+        const errMsg = error?.response?.data?.message || error.message || "An error occurred.";
+        toast.error(errMsg);
     }
+}, [user]); 
+
 
     const addToCart = async (itemId) => {
 
@@ -79,11 +113,14 @@ export const AppContextProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        fetchUserData()
-    }, [])
+        if(user)
+        {
+            fetchUserData()
+        }
+    }, [user])
 
     const value = {
-        user,
+        user,getToken,
         currency, router,
         isSeller, setIsSeller,
         userData, fetchUserData,
