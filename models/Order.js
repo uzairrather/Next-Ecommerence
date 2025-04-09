@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-  userId: { type: String, required: true, ref: 'user' },
+  userId: { type: String, required: true, ref: "user" },
 
   items: [
     {
-      product: { type: String, required: true, ref: 'product' },
+      product: { type: String, required: true, ref: "product" },
       quantity: { type: Number, required: true },
     },
   ],
@@ -13,8 +13,8 @@ const orderSchema = new mongoose.Schema({
   amount: { type: Number, required: true },
 
   address: {
-    type: mongoose.Schema.Types.ObjectId, // ✅ CHANGE THIS
-    ref: "address",                      // ✅ Populate will now work
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "address",
     required: true,
   },
 
@@ -27,6 +27,12 @@ const orderSchema = new mongoose.Schema({
   date: {
     type: Number,
     required: true,
+  },
+
+  orderKey: {
+    type: String,
+    required: true,
+    unique: true, //  optional but strongly recommended
   },
 });
 
