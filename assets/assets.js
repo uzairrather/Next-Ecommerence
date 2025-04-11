@@ -49,6 +49,9 @@ import product_details_page_apple_earphone_image5 from "./product_details_page_a
 import lapt from "./lapt.jpg";
 import Rice from "./Rice.jpg";
 import wat from "./wat.webp";
+import back from "./back.webp";
+import car1 from "./car-1.png";
+import car2 from "./car-2.png";
 
 export const assets = {
   logo,
@@ -102,6 +105,9 @@ export const assets = {
   wat,
   Rice,
   lapt,
+  back,
+  car1,
+  car2
 };
 
 export const BagIcon = () => {

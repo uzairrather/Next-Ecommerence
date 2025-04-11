@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       <Navbar/>
-      <div className="px-6 md:px-16 lg:px-32 bg-smokewhite">
+      <div className="px-6 md:px-16 lg:px-32 bg-[#F8F8FF]">
         <HeaderSlider />
         <HomeProducts />
         <Carousel/>

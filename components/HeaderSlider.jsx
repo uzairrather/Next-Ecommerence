@@ -10,7 +10,7 @@ const HeaderSlider = () => {
       offer: "Limited Time Offer 30% Off",
       buttonText1: "Buy now",
       buttonText2: "Find more",
-      imgSrc: assets.header_headphone_image,
+      imgSrc: assets.car1,
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const HeaderSlider = () => {
       offer: "Hurry up only few lefts!",
       buttonText1: "Shop Now",
       buttonText2: "Explore Deals",
-      imgSrc: assets.header_playstation_image,
+      imgSrc: assets.car2,
     },
     {
       id: 3,
@@ -52,10 +52,14 @@ const HeaderSlider = () => {
         }}
       >
         {sliderData.map((slide, index) => (
-          <div
-            key={slide.id}
-            className="flex flex-col-reverse md:flex-row items-center justify-between bg-[#f2f2f2] py-8 md:px-14 px-5 mt-6 rounded-xl min-w-full"
-          >
+        <div
+        key={slide.id}
+        className="flex flex-col-reverse md:flex-row items-center justify-between py-8 md:px-14 px-5 mt-6 rounded-xl min-w-full text-white"
+        style={{
+          background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
+        }}
+      >
+      
             <div className="md:pl-8 mt-10 md:mt-0">
               <p className="md:text-base text-green-500 pb-1">{slide.offer}</p>
               <h1 className="max-w-lg md:text-[40px] md:leading-[48px] text-2xl font-semibold">
